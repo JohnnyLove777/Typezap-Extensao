@@ -10,14 +10,15 @@
     "<all_urls>"
   ],
   "background": {
-    "service_worker": "background.js",
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": [
         "https://web.whatsapp.com/*"
       ],
       "js": [
-        "inject.js"
+        "injected.js"
       ],
       "run_at": "document_idle"
     }
@@ -28,6 +29,4 @@
   "host_permissions": [
     "https://web.whatsapp.com/*"
   ]
-}
-
 }
