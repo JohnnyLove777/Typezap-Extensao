@@ -1,0 +1,291 @@
+body {
+    width: 300px; /* Largura da janela de popup */
+    height: 425px; /* Altura da janela de popup */
+    margin: 0;
+    padding: 0; /* Removido o padding para alinhamento central */
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Letras brancas */
+    font-family: 'Orbitron', sans-serif; /* Fonte tecnológica */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Garante o alinhamento horizontal */
+    justify-content: flex-start; /* Alinha o conteúdo no início */
+}
+
+h1 {
+    text-align: center; /* Centraliza o texto dentro do elemento h1 */
+    width: 100%; /* Define a largura para ocupar toda a largura disponível */
+    margin: 0; /* Remove a margem padrão do h1 para evitar deslocamentos */
+    padding: 10px 0; /* Adiciona algum espaço acima e abaixo do texto */
+}
+
+#johnnyzap-panel, #content, #buttons-container {
+    width: 100%; /* Ocupa a largura total do body */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+    align-items: center; /* Garante o alinhamento horizontal */
+}
+
+input, button {
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura */
+    width: 250px; /* Largura ajustada para compensar o padding */
+    padding: 10px; /* Preenchimento interno */
+    margin: 10px auto; /* Centraliza automaticamente com margem automática */
+    border: 1px solid #fff; /* Borda branca */
+    background-color: #222; /* Fundo dos inputs e botões */
+    color: #fff; /* Cor da fonte */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave para hover */
+    outline: none; /* Remove o contorno ao focar */
+    align-items: center; /* Garante o alinhamento horizontal */
+    margin-left: 25px; /* Espaçamento superior para o botão */    
+}
+
+button {
+    cursor: pointer; /* Muda o cursor para indicar a possibilidade de clique */
+    font-weight: bold; /* Opcional: aumenta a espessura da fonte para o botão */
+    margin-top: 10px; /* Espaçamento superior para o botão */
+}
+
+button:hover, input:hover {
+    background-color: #444; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Efeito de leve aumento */
+}
+
+button:active {
+    transform: scale(0.95); /* Efeito de leve diminuição ao clicar */
+}
+
+#content {
+    overflow-y: auto; /* Habilita a rolagem se o conteúdo exceder a altura da janela */    
+}
+
+#itens-lista {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px; /* Espaçamento superior para o botão */
+    overflow-y: auto; /* Habilita a rolagem se o conteúdo exceder a altura da janela */
+    max-height: 200px; /* Define um limite de altura para o contêiner */
+}
+
+.item-lista {
+    background-color: #222; /* Fundo escuro para os itens da lista */
+    border: 1px solid #fff; /* Borda branca */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Ocupa a largura total do body */
+    margin-left: 22px; /* Espaçamento superior para o botão */
+    margin-top: 5px; /* Espaçamento superior para o botão */
+}
+
+.item-lista:hover {
+    background-color: #333; /* Fundo mais claro no hover */
+}
+
+.frase-disparo {
+    font-weight: bold; /* Texto em negrito para a frase de disparo */
+    flex-grow: 1; /* Ocupa o espaço disponível */
+}
+
+.enviar-icone {
+    cursor: pointer; /* Indica que o ícone é clicável */
+    color: #4A90E2; /* Cor para o ícone enviar */
+    font-size: 1.2em; /* Tamanho maior para o ícone */
+    margin-right: 10px; /* Garante um espaço à direita do ícone */
+}
+
+.enviar-icone:hover {
+    color: #57a1ff; /* Cor mais clara no hover para o ícone enviar */
+}
+
+#buttons-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 15px; /* Espaçamento superior para o botão */
+}
+
+/* Estiliza a scrollbar (para navegadores baseados em WebKit como Chrome, Safari, Edge) */
+#itens-lista::-webkit-scrollbar {
+    width: 8px; /* Largura da scrollbar */
+}
+
+#itens-lista::-webkit-scrollbar-track {
+    background: #2c2c2c; /* Cor de fundo do trilho da scrollbar */
+    border-radius: 4px; /* Bordas arredondadas para o trilho */
+}
+
+#itens-lista::-webkit-scrollbar-thumb {
+    background: #565656; /* Cor de fundo da alça da scrollbar */
+    border-radius: 4px; /* Bordas arredondadas para a alça */
+}
+
+#itens-lista::-webkit-scrollbar-thumb:hover {
+    background: #787878; /* Cor de fundo da alça ao passar o mouse */
+}
+
+/* Para o Firefox */
+#itens-lista {
+    scrollbar-width: thin; /* Define a largura da scrollbar como fina */
+    scrollbar-color: #565656 #2c2c2c; /* Define as cores da alça e do trilho da scrollbar */
+}
+
+footer {
+    margin-top: 25px; /* Empurra o rodapé para a parte inferior da janela de popup */
+    padding: 0px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.75em;
+}
+
+#active-chats-section {
+    text-align: center;
+}
+
+.expandable-list-header {
+    cursor: pointer;
+    user-select: none;
+}
+
+.expandable-list-content {
+    list-style-type: none; /* Remove os marcadores de lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0 auto; /* Centraliza a lista horizontalmente */
+    max-width: 600px; /* Ajuste conforme necessário */
+    text-align: left; /* Alinha o texto dos itens à esquerda */
+}
+
+.expandable-list-content li {
+    cursor: pointer; /* Torna os itens da lista clicáveis */
+    padding: 10px; /* Adiciona um pouco de espaço interno */
+    border-bottom: 1px solid #ccc; /* Adiciona uma linha de separação */
+}
+
+/* Estiliza o ícone para indicar a direção da lista */
+.fas.fa-chevron-down, .fas.fa-chevron-up {
+    margin-right: 5px;
+}
+
+#active-chats-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.list-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.expandable-list-content {
+    list-style: none;
+    padding: 0;
+}
+
+.expandable-list-content li {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.expandable-list-content li:hover {
+    background-color: #f0f0f0;
+}
+
+.expandable-list-content li.selected {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilo para o container dos chats ativos */
+#active-chats-container {
+    width: 80%; /* Define a largura como 80% do elemento pai */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Estilo para o cabeçalho da lista */
+.list-header {
+    font-size: 18px;
+    color: #333; /* Cor de texto */
+    background-color: #f5f5f5; /* Cor de fundo */
+    padding: 10px;
+    border-radius: 4px 4px 0 0; /* Arredondar apenas os cantos superiores */
+    border-bottom: 1px solid #ddd; /* Linha separadora entre cabeçalho e lista */
+}
+
+/* Estilo para a lista expansível */
+#expandable-list {
+    list-style-type: none; /* Remove estilos de lista padrão */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */    
+    border-radius: 4px 4px 4px 4px; /* Arredondar apenas os cantos inferiores */
+    border: 1px solid #ddd; /* Borda ao redor da lista */    
+}
+
+/* Estilo para cada item da lista */
+#expandable-list li {
+    padding: 10px;
+    border-bottom: 1px solid #eee; /* Linha separadora entre itens */
+}
+
+/* Remover a linha do último item */
+#expandable-list li:last-child {
+    border-bottom: none;
+}
+
+#listaChats {
+    width: 100%; /* Aumenta a largura para preencher o contêiner */
+    height: 30px; /* Aumenta a altura para um melhor manuseio */
+    background-color: #333; /* Define um fundo escuro */
+    color: white; /* Define a cor da letra para branco */
+    padding: 5px; /* Adiciona um pouco de padding para o texto não ficar muito grudado nas bordas */
+    border-radius: 5px; /* Adiciona bordas arredondadas para um visual mais suave */
+    border: 1px solid #555; /* Define a cor da borda */
+    font-size: 16px; /* Aumenta o tamanho da fonte para melhor legibilidade */
+}
+
+/* Para melhorar a aparência das opções no dropdown */
+#listaChats option {
+    background-color: #555; /* Define um fundo escuro para as opções */
+    color: white; /* Mantém a cor da letra branca para as opções */
+}
+
+#chat-input-container {
+    display: flex; /* Utiliza Flexbox para centralizar o conteúdo */
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    margin: -10px 0; /* Margem superior e inferior para separação */
+}
+
+.chat-number-input {
+    width: 80%; /* Largura relativa ao seu contêiner */
+    height: 80%; /* Aumenta a altura para um melhor manuseio */
+    padding: 8px; /* Espaçamento interno para aumentar a área de toque */
+    margin-top: 10px; /* Espaço acima do campo */
+    border: 1px solid #ddd; /* Borda sutil */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte legível */
+    color: #333; /* Cor da fonte escura para contraste */
+    background-color: #f9f9f9; /* Cor de fundo clara */
+}
+
+.chat-number-input::placeholder {
+    color: #aaa; /* Cor do placeholder mais clara */
+}
+
+.chat-number-input:focus {
+    outline: none; /* Remove o contorno padrão ao focar */
+    border-color: #007bff; /* Cor da borda ao focar */
+    background-color: #fff; /* Fundo branco ao focar para destaque */
+}
+
+
+
+

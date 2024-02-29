@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>TypeZap Extension</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <div id="welcome-section">
+        <h1 class="welcome-title">Bem-vindo à Extensão TypeZap</h1>
+        <div id="input-container">
+            <input type="text" id="endpointInput" placeholder="Link do endpoint /extensaoTypezap">
+            <input type="text" id="tokenInput" placeholder="Token">
+            <button id="registerExtension">Registrar Extensão</button>
+        </div>        
+    </div>
+    <div id="main-content" style="display:none;">
+        <div id="johnnyzap-panel">
+            <div id="header">
+                <h1>TypeZap Respostas Rápidas</h1>                
+            </div>
+            <div id="content">
+                <!-- Menu Principal -->
+                <div id="active-chats-container">
+                    <div class="list-header">Forneça o Numero</div>
+                    <div id="chat-input-container">
+                        <input type="text" id="chatNumberInput" placeholder="33 988776655" class="chat-number-input">
+                    </div>                                
+                </div>                              
+                
+                <div id="itens-lista">
+                    
+                </div>
+                <div id="buttons-container">
+                    <button id="updateFlows">Atualizar Fluxos</button>
+                    <button id="resetConnection">Redefinir Conexão</button>
+                </div>                
+            </div>
+            <footer>
+                <p>Desenvolvido com sangue no olho pelo Johnny</p>
+            </footer>        
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

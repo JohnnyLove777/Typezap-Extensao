@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "TypeZap Extension",
+  "version": "1.0",
+  "description": "Extensão para disparar respostas rápidas com o TypeZap.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ]
+}
+
+}
